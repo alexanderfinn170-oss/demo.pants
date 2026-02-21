@@ -25,11 +25,15 @@ src="https://www.facebook.com/tr?id=YOUR_PIXEL_ID&ev=PageView&noscript=1"/>
 <style>
 body {margin:0;font-family:Arial,Helvetica,sans-serif;background:#f9f9f9;color:#222;line-height:1.6;}
 .wrapper {max-width:1000px;margin:auto;background:white;padding-bottom:50px;}
+
+/* Header */
 .header {background:#1b262c;color:white;text-align:center;padding:50px 20px;position:relative;}
+.header img.logo {width:120px;height:120px;border-radius:50%;object-fit:cover;margin:0 auto 15px;display:block;background:#ccc;}
+.header h2.company-name {font-size:28px;margin:0 0 15px;color:#bbe1fa;}
 .header h1 {font-size:36px;font-weight:bold;margin:0;}
 .header p {font-size:20px;margin-top:10px;color:#bbe1fa;}
 
-.section {padding:40px 20px;}
+/* Slider */
 .slider {position:relative;width:100%;height:400px;overflow:hidden;margin-bottom:30px;border-radius:10px;}
 .slide {position:absolute;width:100%;height:100%;opacity:0;transition:opacity 1s ease-in-out;}
 .slide img {width:100%;height:100%;object-fit:cover;border-radius:10px;}
@@ -125,6 +129,8 @@ box-shadow:0 10px 25px rgba(0,0,0,0.3);
 
 <!-- Header -->
 <div class="header">
+<img class="logo" src="#" alt="Company Logo">
+<h2 class="company-name">Your Company</h2>
 <h1>Premium Jens Pant</h1>
 <p>Style, Comfort & Durability – Perfect for Everyday Wear</p>
 </div>
