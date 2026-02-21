@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Premium Jens Pant22</title>
+<title>Premium Jens Pant</title>
 
 <!-- ================= FACEBOOK PIXEL PLACE ================= -->
 <!-- FB.pixel.here -->
@@ -15,6 +15,7 @@
 --dark:#0a3d2e;
 }
 
+/* ========== BODY ========== */
 body{
 margin:0;
 font-family:'Segoe UI',sans-serif;
@@ -32,17 +33,24 @@ position:relative;
 /* ========== HEADER ========== */
 .company-header{
 text-align:center;
-padding:40px 15px;
-background:#f0f0f0;
+padding:50px 15px;
+background: linear-gradient(180deg, #00c6ff, #0072ff);
+animation: gradientShift 8s ease infinite alternate;
 border-bottom:3px solid #0f9d58;
 box-shadow:0 8px 20px rgba(0,0,0,.1);
 border-radius:0 0 25px 25px;
 position:relative;
 }
 
+@keyframes gradientShift{
+0%{background: linear-gradient(180deg, #0072ff, #00c6ff);}
+50%{background: linear-gradient(180deg, #00aaff, #0099ff);}
+100%{background: linear-gradient(180deg, #00c6ff, #0072ff);}
+}
+
 .company-header img{
-width:120px;
-height:120px;
+width:160px;
+height:160px;
 border-radius:50%;
 object-fit:cover;
 border:3px solid #0f9d58;
@@ -55,9 +63,9 @@ box-shadow:0 10px 25px rgba(0,0,0,.2);
 }
 
 .company-header h2{
-margin:15px 0 0;
-font-size:26px;
-color:#0a3d2e;
+margin:20px 0 0;
+font-size:30px;
+color:white;
 letter-spacing:1px;
 }
 
@@ -300,7 +308,7 @@ box-shadow:0 10px 25px rgba(0,0,0,.3);
 
 <!-- YOUTUBE VIDEO -->
 <div class="video-section">
-<iframe src="https://www.youtube.com/embed/YOUR_VIDEO_ID?autoplay=1&mute=1&playsinline=1"
+<iframe src="https://www.youtube.com/embed/YOUR_VIDEO_ID?autoplay=1&mute=0&playsinline=1"
 frameborder="0" allow="autoplay" allowfullscreen></iframe>
 </div>
 
@@ -397,7 +405,7 @@ frameborder="0" allow="autoplay" allowfullscreen></iframe>
 <div class="footer">
 <p>© 2026 Your Company | All Rights Reserved</p>
 <p>
-Design By <a href="YOUR_WEBSITE_LINK_HERE" target="_blank">GreenLine IT</a>
+Design By <a href="YOUR_WEBSITE_LINK_HERE" target="_blank" style="color:#00ff00;">GreenLine IT</a>
 </p>
 </div>
 
