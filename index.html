@@ -18,13 +18,14 @@
 body{
 margin:0;
 font-family:'Segoe UI',sans-serif;
-background:#f4f6f9;
+background:#f4f4f4;
 }
 
 .wrapper{
 max-width:1000px;
 margin:auto;
 background:#fff;
+padding-bottom:50px;
 }
 
 /* Logo Section */
@@ -38,14 +39,13 @@ width:120px;
 height:120px;
 border-radius:50%;
 object-fit:cover;
-border:5px solid var(--primary);
-box-shadow:0 0 25px rgba(15,157,88,.6);
+border:none;
 }
 
 .company-header h2{
 margin:15px 0 0;
 font-size:24px;
-color:var(--dark);
+color:#111;
 }
 
 /* Video */
@@ -57,10 +57,10 @@ padding:20px;
 width:100%;
 height:315px;
 border-radius:15px;
-box-shadow:0 15px 35px rgba(0,0,0,.3);
+box-shadow:0 10px 25px rgba(0,0,0,.2);
 }
 
-/* Premium Product Card */
+/* Product Card */
 .product{
 padding:30px 20px;
 text-align:center;
@@ -70,7 +70,7 @@ text-align:center;
 padding:8px;
 border-radius:25px;
 background:linear-gradient(135deg,#0f9d58,#34d399,#0f9d58);
-box-shadow:0 10px 35px rgba(0,0,0,.3);
+box-shadow:0 10px 25px rgba(0,0,0,.2);
 }
 
 .product-frame img{
@@ -81,7 +81,7 @@ display:block;
 
 .product h3{
 margin:15px 0 10px;
-color:var(--dark);
+color:#111;
 }
 
 .product p{
@@ -99,7 +99,7 @@ border-radius:50px;
 font-weight:bold;
 text-decoration:none;
 animation:moveBtn 1.5s infinite;
-box-shadow:0 8px 20px rgba(0,0,0,.3);
+box-shadow:0 5px 15px rgba(0,0,0,.2);
 }
 
 @keyframes moveBtn{
@@ -171,7 +171,7 @@ font-size:13px;
 }
 
 .footer a{
-color:#34d399;
+color:#0f9d58;
 text-decoration:none;
 font-weight:bold;
 }
@@ -188,14 +188,13 @@ font-weight:bold;
 <h2>Your Company</h2>
 </div>
 
-<!-- YOUTUBE -->
+<!-- YOUTUBE VIDEO -->
 <div class="video-section">
 <iframe src="https://www.youtube.com/embed/YOUR_VIDEO_ID?autoplay=1&mute=1&playsinline=1"
 frameborder="0" allow="autoplay" allowfullscreen></iframe>
 </div>
 
-<!-- 4 PRODUCTS -->
-
+<!-- PRODUCTS -->
 <div class="product">
 <div class="product-frame">
 <img src="IMAGE_LINK_HERE_1">
@@ -270,6 +269,9 @@ frameborder="0" allow="autoplay" allowfullscreen></iframe>
 <button type="submit" class="submit-btn">অর্ডার কনফার্ম করুন</button>
 
 </form>
+
+<div id="successMsg" style="display:none; margin-top:15px; padding:15px; background:#d4edda; color:#155724; border-radius:5px; font-size:16px; text-align:center;">
+✅ ধন্যবাদ আপনার অর্ডারটি সাবমিট হয়েছে ✅ আমাদের সাপোর্ট প্রতিনিধি আপনার সাথে কিছুক্ষণ পর যোগাযোগ করবে ✅
 </div>
 
 </div>
@@ -278,10 +280,10 @@ frameborder="0" allow="autoplay" allowfullscreen></iframe>
 <div class="footer">
 <p>© 2026 Your Company | All Rights Reserved</p>
 <p>
-<a href="YOUR_WEBSITE_LINK_HERE" target="_blank">
-Design By GreenLine IT
-</a>
+Design By <a href="YOUR_WEBSITE_LINK_HERE" target="_blank">GreenLine IT</a>
 </p>
+</div>
+
 </div>
 
 <script>
@@ -290,13 +292,12 @@ let qty=1;
 
 function changeQty(change){
 qty+=change;
-if(qty<1)qty=1;
+if(qty<1) qty=1;
 document.getElementById("qty").innerText=qty;
 document.getElementById("total").innerText=price*qty;
 }
 
-/* ================= GOOGLE SHEET SUBMIT ================= */
-/* এখানে আপনার Google Script Web App URL বসান */
+// ================= GOOGLE SHEET SUBMIT =================
 const scriptURL = "PASTE_YOUR_GOOGLE_SCRIPT_WEBAPP_URL_HERE";
 
 document.getElementById("orderForm").addEventListener("submit", function(e){
@@ -315,12 +316,15 @@ fetch(scriptURL, {
 method: "POST",
 body: JSON.stringify(data)
 })
-.then(res => {
-alert("অর্ডার সফল হয়েছে ✅");
+.then(res=>{
+document.getElementById("successMsg").style.display="block";
 document.getElementById("orderForm").reset();
+qty=1;
+document.getElementById("qty").innerText=qty;
+document.getElementById("total").innerText=price;
 })
-.catch(err => {
-alert("সাবমিট সমস্যা হয়েছে ❌");
+.catch(err=>{
+alert("সাবমিট করতে সমস্যা হয়েছে।");
 });
 });
 </script>
