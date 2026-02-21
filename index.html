@@ -5,121 +5,144 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Premium Jens Pant – Style & Comfort</title>
 
-<!-- Facebook Pixel Code -->
-<script>
-!function(f,b,e,v,n,t,s)
-{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-n.queue=[];t=b.createElement(e);t.async=!0;
-t.src=v;s=b.getElementsByTagName(e)[0].parentNode.insertBefore(t,s)
-}(window, document,'script','https://connect.facebook.net/en_US/fbevents.js');
-fbq('init', 'YOUR_PIXEL_ID'); 
-fbq('track', 'PageView');
-</script>
-<noscript>
-<img height="1" width="1" style="display:none"
-src="https://www.facebook.com/tr?id=YOUR_PIXEL_ID&ev=PageView&noscript=1"/>
-</noscript>
-
 <style>
-body {margin:0;font-family:Arial,Helvetica,sans-serif;background:#f9f9f9;color:#222;line-height:1.6;}
-.wrapper {max-width:1000px;margin:auto;background:white;padding-bottom:50px;}
+body {
+margin:0;
+font-family:Arial,Helvetica,sans-serif;
+background:#f4f6f9;
+color:#222;
+line-height:1.6;
+display:flex;
+justify-content:center;
+}
+
+.wrapper {
+width:100%;
+max-width:1000px;
+background:white;
+padding-bottom:50px;
+}
 
 /* Header */
-.header {background:#1b262c;color:white;text-align:center;padding:50px 20px;position:relative;}
-.header img.logo {width:120px;height:120px;border-radius:50%;object-fit:cover;margin:0 auto 15px;display:block;background:#ccc;}
-.header h2.company-name {font-size:28px;margin:0 0 15px;color:#bbe1fa;}
-.header h1 {font-size:36px;font-weight:bold;margin:0;}
-.header p {font-size:20px;margin-top:10px;color:#bbe1fa;}
-
-/* Slider */
-.slider {position:relative;width:100%;height:400px;overflow:hidden;margin-bottom:30px;border-radius:10px;}
-.slide {position:absolute;width:100%;height:100%;opacity:0;transition:opacity 1s ease-in-out;}
-.slide img {width:100%;height:100%;object-fit:cover;border-radius:10px;}
-.active {opacity:1;}
-
-/* Price box */
-.price-box {background:#dff6ff;border:2px dashed #1b262c;padding:25px;text-align:center;margin:20px 0;border-radius:10px;}
-.old-price {text-decoration:line-through;color:gray;font-size:20px;}
-.new-price {color:#1b262c;font-size:28px;font-weight:bold;margin-top:10px;}
-
-/* Buttons */
-.btn, button {
-display:block;
-width:60%;
-margin:20px auto;
+.header {
 background:#1b262c;
 color:white;
 text-align:center;
-padding:20px;
-font-size:22px;
-text-decoration:none;
+padding:50px 20px;
+}
+.header img.logo {
+width:120px;
+height:120px;
+border-radius:50%;
+object-fit:cover;
+margin-bottom:15px;
+background:#ccc;
+}
+.header h2 {color:#bbe1fa;margin:0;}
+.header h1 {margin:10px 0 0;font-size:34px;}
+.header p {color:#bbe1fa;font-size:18px;}
+
+/* Attractive Image Frame */
+.product-section img,
+.slider img,
+.main-product-img{
+width:100%;
+border-radius:15px;
+border:4px solid #ffffff;
+box-shadow:0 10px 30px rgba(0,0,0,0.25);
+transition:0.4s;
+background:#ddd;
+}
+.product-section img:hover,
+.slider img:hover{
+transform:scale(1.03);
+box-shadow:0 15px 40px rgba(0,0,0,0.35);
+}
+
+/* Slider */
+.slider {position:relative;height:380px;overflow:hidden;border-radius:15px;margin:20px;}
+.slide {position:absolute;width:100%;height:100%;opacity:0;transition:1s;}
+.active {opacity:1;}
+
+/* Section */
+.section {padding:20px;}
+.price-box {
+background:#e3f2fd;
 border-radius:12px;
-position:relative;
+text-align:center;
+padding:20px;
+}
+.old-price {text-decoration:line-through;color:gray;}
+.new-price {font-size:26px;font-weight:bold;color:#1b262c;}
+
+.btn, button {
+display:block;
+width:90%;
+max-width:400px;
+margin:20px auto;
+padding:18px;
+background:#1b262c;
+color:white;
+border:none;
+border-radius:10px;
+font-size:18px;
 cursor:pointer;
-transition: all 0.3s ease;
-box-shadow:0 5px 15px rgba(0,0,0,0.2);
+transition:0.3s;
 }
 .btn:hover, button:hover {
-transform: translateY(-5px) scale(1.08) rotate(-1deg);
-box-shadow:0 10px 25px rgba(0,0,0,0.4);
 background:#3282b8;
+transform:scale(1.05);
 }
 
-/* Features */
-.features li {margin:12px 0;font-size:18px;}
-
-/* Products */
-.product-section {margin-bottom:50px;}
-.product-section img {width:100%;border-radius:10px;margin-bottom:15px;background:#ccc; display:block; height:400px;}
-.product-section h3 {font-size:24px;margin-bottom:10px;text-align:center;}
-.product-section p {font-size:16px;text-align:center;}
-
-/* Video section */
-.video-section iframe {width:100%;height:450px;border:none;border-radius:10px;margin-bottom:40px;}
-
-/* Order form */
-.order-box {background:#e0f7fa;padding:40px 20px;border:1px solid #81d4fa;border-radius:10px;margin-top:50px;}
-input, select, textarea {width:100%;padding:15px;margin:10px 0;border:1px solid #ccc;border-radius:8px;font-size:16px;}
-.success-message {display:none;background:#d4edda;color:#155724;padding:15px;margin-top:10px;border-radius:5px;font-size:16px;}
-
-/* Footer */
-.footer {background:#1b262c;color:white;text-align:center;padding:25px;font-size:14px;}
-.footer a.greenline{color:#00ff00;text-decoration:none;font-weight:bold;}
-.footer a.greenline:hover{text-decoration:underline;}
-
-/* Floating buttons */
-.float-buttons{
-position:fixed;
-bottom:25px;
-right:25px;
-display:flex;
-flex-direction:column;
-gap:15px;
-z-index:999;
+/* Order */
+.order-box {
+background:#e0f7fa;
+padding:20px;
+border-radius:12px;
+margin:20px;
 }
-.float-buttons a{
-width:50px;
-height:50px;
-border-radius:50%;
+input, select {
+width:100%;
+padding:14px;
+margin:10px 0;
+border-radius:8px;
+border:1px solid #ccc;
+font-size:16px;
+}
+label span {color:red;}
+
+.quantity-box {
 display:flex;
 align-items:center;
 justify-content:center;
-background:#25d366;
-box-shadow:0 5px 15px rgba(0,0,0,0.2);
-transition:transform 0.3s ease;
+gap:15px;
+margin:15px 0;
 }
-.float-buttons a.messenger{
-background:#0084ff;
+.quantity-box button {
+width:40px;
+height:40px;
+font-size:22px;
+padding:0;
 }
-.float-buttons a img{
-width:24px;
-height:24px;
+.total-price {
+text-align:center;
+font-size:20px;
+font-weight:bold;
+margin-top:10px;
 }
-.float-buttons a:hover{
-transform:scale(1.3) rotate(-10deg);
-box-shadow:0 10px 25px rgba(0,0,0,0.3);
+
+.success-message {
+display:none;
+background:#d4edda;
+padding:10px;
+border-radius:6px;
+margin-top:10px;
+color:#155724;
+}
+
+/* Mobile Fix */
+@media(max-width:768px){
+.wrapper {width:100%;}
 }
 </style>
 </head>
@@ -127,139 +150,107 @@ box-shadow:0 10px 25px rgba(0,0,0,0.3);
 
 <div class="wrapper">
 
-<!-- Header -->
 <div class="header">
-<img class="logo" src="#" alt="Company Logo">
-<h2 class="company-name">Your Company</h2>
+<img class="logo" src="#" alt="Logo">
+<h2>Your Company</h2>
 <h1>Premium Jens Pant</h1>
-<p>Style, Comfort & Durability – Perfect for Everyday Wear</p>
+<p>Style, Comfort & Durability</p>
 </div>
 
-<!-- Hero Slider -->
 <div class="slider">
-    <div class="slide active"><img src="#" alt="Jens Pant 1"></div>
-    <div class="slide"><img src="#" alt="Jens Pant 2"></div>
-    <div class="slide"><img src="#" alt="Jens Pant 3"></div>
+<div class="slide active"><img src="#" alt=""></div>
+<div class="slide"><img src="#" alt=""></div>
+<div class="slide"><img src="#" alt=""></div>
 </div>
 
-<!-- Price Section -->
 <div class="section price-box">
-<p class="old-price">আগের মূল্য: ৳ ১২০০ / ১টি</p>
-<p class="new-price">অফার মূল্য: ৳ ৯৯০ / ১টি</p>
+<p class="old-price">আগের মূল্য: ৳ ১২০০</p>
+<p class="new-price">অফার মূল্য: ৳ ৯৯০</p>
 <a href="#order" class="btn">এখনই অর্ডার করুন</a>
 </div>
 
-<!-- Features Section -->
-<div class="section">
-<h2 style="font-size:30px; margin-bottom:20px;">কেন আমাদের Jens Pant কিনবেন:</h2>
-<ul class="features">
-<li>Premium quality cotton & fabric</li>
-<li>Perfect fit & stylish design</li>
-<li>Durable & comfortable for everyday use</li>
-<li>Easy to wash & long-lasting</li>
-<li>Trusted & quality checked</li>
-</ul>
-<a href="#order" class="btn">অর্ডার করুন</a>
+<div class="section product-section">
+<img src="#" alt="">
 </div>
 
-<!-- Product Images -->
-<div class="section">
-<div class="product-section">
-<img src="#" alt="Jens Pant 1">
-<h3>Classic Blue Pant</h3>
-<p>Comfortable and stylish for casual wear.</p>
-<a href="#order" class="btn">অর্ডার করুন</a>
-</div>
+<div class="order-box" id="order">
 
-<div class="product-section">
-<img src="#" alt="Jens Pant 2">
-<h3>Dark Grey Pant</h3>
-<p>Perfect for office and everyday use.</p>
-<a href="#order" class="btn">অর্ডার করুন</a>
-</div>
+<h2 style="text-align:center;">অর্ডার ফর্ম</h2>
 
-<div class="product-section">
-<img src="#" alt="Jens Pant 3">
-<h3>Black Slim Fit Pant</h3>
-<p>Modern design with perfect fit.</p>
-<a href="#order" class="btn">অর্ডার করুন</a>
-</div>
-</div>
+<!-- Main Product Small Image -->
+<img src="#" class="main-product-img" style="max-width:200px;margin:0 auto 15px;display:block;">
 
-<!-- Video Section -->
-<div class="section video-section">
-<h2 style="font-size:28px; margin-bottom:20px;">Product Video Details</h2>
-<iframe src="https://www.youtube.com/embed/qV-iQLGW-kY" allowfullscreen></iframe>
-<a href="#order" class="btn">এখনই অর্ডার করুন</a>
-</div>
-
-<!-- Order Form -->
-<div class="section order-box" id="order">
-<h2 style="font-size:28px; margin-bottom:20px;">অর্ডার ফর্ম</h2>
 <form id="orderForm">
-<input type="text" name="name" placeholder="আপনার নাম লিখুন" required>
-<input type="tel" name="phone" placeholder="মোবাইল নম্বর" required>
-<input type="text" name="address" placeholder="সম্পূর্ণ ঠিকানা" required>
-<select name="package" required>
-<option value="">প্যাকেজ নির্বাচন করুন</option>
-<option>১ প্যাক - ৳৯৯০ / ১টি</option>
-<option>২ প্যাক - ৳১৯০০ / ২টি</option>
+
+<label>আপনার নাম <span>*</span></label>
+<input type="text" name="name" required>
+
+<label>মোবাইল নম্বর <span>*</span></label>
+<input type="tel" name="phone" required>
+
+<label>ঠিকানা <span>*</span></label>
+<input type="text" name="address" required>
+
+<label>সাইজ নির্বাচন করুন</label>
+<select name="size">
+<option>M</option>
+<option>L</option>
+<option>XL</option>
+<option>XXL</option>
 </select>
+
+<div class="quantity-box">
+<button type="button" onclick="changeQty(-1)">-</button>
+<span id="qty">1</span>
+<button type="button" onclick="changeQty(1)">+</button>
+</div>
+
+<div class="total-price">
+মোট মূল্য: ৳ <span id="total">990</span>
+</div>
+
+<input type="hidden" name="quantity" id="quantityInput" value="1">
+<input type="hidden" name="totalPrice" id="totalInput" value="990">
+
 <button type="submit">অর্ডার কনফার্ম করুন</button>
+
 </form>
+
 <div class="success-message" id="successMsg">
-ধন্যবাদ! আপনার অর্ডার সফলভাবে সাবমিট হয়েছে।২৪ ঘন্টার মধ্যে আমাদের সাপোর্ট প্রতিনিধি আপনার সাথে যোগাযোগ করবে, আপনাকে অসংখ্য ধন্যবাদ অর্ডার করার জন্য ✅
-</div>
-</div>
-
-<div class="footer">
-© ২০২৬ Premium Jens Pant | All rights reserved | Design By <a href="https://www.greenlineit.com" target="_blank" class="greenline">GreenLine It</a>
+ধন্যবাদ! আপনার অর্ডার সফলভাবে সাবমিট হয়েছে।
 </div>
 
 </div>
 
-<!-- FLOATING WHATSAPP & MESSENGER BUTTONS -->
-<div class="float-buttons">
-<a href="YOUR_WHATSAPP_LINK_HERE" target="_blank">
-<img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
-</a>
-<a href="YOUR_MESSENGER_LINK_HERE" class="messenger" target="_blank">
-<img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEh8riD6IZjR24jLMYlWyin3OPOTgxKaeT8siEuSI53h84XtSC6fBImvDlBYw0H2K0sA84CH2y_1D0B6Jr1ot9o-SZsRWKdeoX0A5KDqELgdSyCOQKZdPYqkhBltAccsl789SkoS69TDe7X5JwBZa9vnid6MpMXpH9l4V1WC8uDOMQ1naBF4dfq0MJn_ukU/s960/Facebook_Messenger_logo_2020.svg.png" alt="Messenger">
-</a>
 </div>
 
 <script>
-// Hero Slider
+let price = 990;
+let qty = 1;
+
+function changeQty(change){
+qty += change;
+if(qty < 1) qty = 1;
+document.getElementById("qty").innerText = qty;
+document.getElementById("total").innerText = price * qty;
+document.getElementById("quantityInput").value = qty;
+document.getElementById("totalInput").value = price * qty;
+}
+
+// Slider
 let slides = document.querySelectorAll(".slide");
 let index = 0;
-setInterval(() => {
+setInterval(()=>{
 slides[index].classList.remove("active");
-index = (index + 1) % slides.length;
+index = (index+1)%slides.length;
 slides[index].classList.add("active");
-}, 4000);
+},4000);
 
-// Form Submit to Google Sheet
-document.getElementById("orderForm").addEventListener("submit", async function(e){
+// Form Submit
+document.getElementById("orderForm").addEventListener("submit",function(e){
 e.preventDefault();
-const formData = new FormData(this);
-const params = new URLSearchParams();
-formData.forEach((v,k)=>{params.append(k,v);});
-
-try{
-const res = await fetch("https://script.google.com/macros/s/AKfycbxT7TaT6_MXlfZ5Oi5PyxrELfLUARs-hHBDM5Kha-zirbOKIYNf7bB_qxzUued6oQUq/exec",{
-method:"POST",
-body: params
-});
-if(res.ok){
 document.getElementById("successMsg").style.display="block";
 this.reset();
-fbq('track', 'Lead');
-}else{
-alert("সাবমিট করতে সমস্যা হয়েছে। আবার চেষ্টা করুন।");
-}
-}catch(err){
-alert("সাবমিট করতে সমস্যা হয়েছে।");
-}
 });
 </script>
 
