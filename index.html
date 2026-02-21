@@ -5,11 +5,16 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Premium Jens Pant</title>
 
-<!-- ================= FB PIXEL SETUP PLACE ================= -->
-<!-- আপনার Facebook Pixel Code এখানে বসাবেন -->
+<!-- ================= FACEBOOK PIXEL PLACE ================= -->
+<!-- আপনার Facebook Pixel Code এখানে বসান -->
 <!-- ======================================================= -->
 
 <style>
+:root{
+--primary:#0f9d58;
+--dark:#0a3d2e;
+}
+
 body{
 margin:0;
 font-family:'Segoe UI',sans-serif;
@@ -22,31 +27,30 @@ margin:auto;
 background:#fff;
 }
 
-/* Company Header */
+/* Logo Section */
 .company-header{
 text-align:center;
-padding:25px 15px;
+padding:30px 15px;
 }
 
 .company-header img{
-width:100px;
-height:100px;
+width:120px;
+height:120px;
 border-radius:50%;
 object-fit:cover;
-box-shadow:0 10px 25px rgba(0,0,0,.3);
+border:5px solid var(--primary);
+box-shadow:0 0 25px rgba(15,157,88,.6);
 }
 
 .company-header h2{
-margin:10px 0 0;
-font-size:22px;
-color:#1b262c;
-font-weight:bold;
+margin:15px 0 0;
+font-size:24px;
+color:var(--dark);
 }
 
-/* YouTube Section */
+/* Video */
 .video-section{
 padding:20px;
-text-align:center;
 }
 
 .video-section iframe{
@@ -56,60 +60,59 @@ border-radius:15px;
 box-shadow:0 15px 35px rgba(0,0,0,.3);
 }
 
-/* Product Section */
+/* Premium Product Card */
 .product{
-padding:25px 20px;
+padding:30px 20px;
 text-align:center;
 }
 
-.product img{
-width:100%;
-border-radius:20px;
-box-shadow:0 15px 40px rgba(0,0,0,.35);
-border:5px solid #fff;
-transition:.4s;
+.product-frame{
+padding:8px;
+border-radius:25px;
+background:linear-gradient(135deg,#0f9d58,#34d399,#0f9d58);
+box-shadow:0 10px 35px rgba(0,0,0,.3);
 }
 
-.product img:hover{
-transform:scale(1.03);
+.product-frame img{
+width:100%;
+border-radius:20px;
+display:block;
 }
 
 .product h3{
-margin:15px 0 8px;
-font-size:20px;
-color:#1b262c;
+margin:15px 0 10px;
+color:var(--dark);
 }
 
 .product p{
-font-size:14px;
 color:#444;
+font-size:14px;
 }
 
-/* Moving Button */
 .order-btn{
 display:inline-block;
 margin-top:15px;
-padding:14px 28px;
-background:#e63946;
+padding:14px 30px;
+background:var(--primary);
 color:white;
 border-radius:50px;
 font-weight:bold;
 text-decoration:none;
-animation:float 1.5s infinite;
+animation:moveBtn 1.5s infinite;
 box-shadow:0 8px 20px rgba(0,0,0,.3);
 }
 
-@keyframes float{
+@keyframes moveBtn{
 0%{transform:translateY(0);}
 50%{transform:translateY(-6px);}
 100%{transform:translateY(0);}
 }
 
-/* Order Box */
+/* Order Form */
 .order-box{
-background:#e0f7fa;
-padding:20px;
+background:#e6f4ea;
 margin:20px;
+padding:25px;
 border-radius:15px;
 }
 
@@ -135,6 +138,10 @@ margin:15px 0;
 width:40px;
 height:40px;
 font-size:22px;
+background:var(--primary);
+color:white;
+border:none;
+border-radius:8px;
 }
 
 .total{
@@ -143,10 +150,10 @@ font-weight:bold;
 font-size:18px;
 }
 
-button{
+.submit-btn{
 width:100%;
 padding:15px;
-background:#1b262c;
+background:var(--dark);
 color:white;
 border:none;
 border-radius:10px;
@@ -154,32 +161,19 @@ font-size:16px;
 margin-top:15px;
 }
 
-/* Floating Buttons */
-.float-buttons{
-position:fixed;
-bottom:20px;
-right:20px;
-display:flex;
-flex-direction:column;
-gap:10px;
+/* Footer */
+.footer{
+background:#111;
+color:#ccc;
+text-align:center;
+padding:25px 15px;
+font-size:13px;
 }
 
-.float-buttons a{
-width:45px;
-height:45px;
-border-radius:50%;
-display:flex;
-align-items:center;
-justify-content:center;
-background:#25d366;
-}
-
-.float-buttons a.messenger{
-background:#0084ff;
-}
-
-.float-buttons img{
-width:22px;
+.footer a{
+color:#34d399;
+text-decoration:none;
+font-weight:bold;
 }
 </style>
 </head>
@@ -188,68 +182,73 @@ width:22px;
 
 <div class="wrapper">
 
-<!-- Company Logo & Name -->
+<!-- LOGO -->
 <div class="company-header">
-<img src="#" alt="Company Logo">
+<img src="YOUR_LOGO_LINK_HERE" alt="Logo">
 <h2>Your Company</h2>
 </div>
 
-<!-- YouTube Video First -->
+<!-- YOUTUBE -->
 <div class="video-section">
-<iframe src="https://www.youtube.com/embed/YOUR_VIDEO_ID"
-frameborder="0"
-allowfullscreen>
-</iframe>
+<iframe src="https://www.youtube.com/embed/YOUR_VIDEO_ID?autoplay=1&mute=1&playsinline=1"
+frameborder="0" allow="autoplay" allowfullscreen></iframe>
 </div>
 
-<!-- 4 Product Sections -->
+<!-- 4 PRODUCTS -->
 
 <div class="product">
-<img src="#" alt="">
-<h3>Classic Blue Edition</h3>
-<p>ডেইলি ইউজের জন্য প্রিমিয়াম ফ্যাব্রিক ও স্টাইলিশ লুক।</p>
+<div class="product-frame">
+<img src="IMAGE_LINK_HERE_1">
+</div>
+<h3>Premium Blue Edition</h3>
+<p>প্রিমিয়াম ফ্যাব্রিক, লং লাস্টিং কোয়ালিটি।</p>
 <a href="#order" class="order-btn">অর্ডার করতে চাই</a>
 </div>
 
 <div class="product">
-<img src="#" alt="">
-<h3>Dark Grey Premium</h3>
-<p>অফিস ও ক্যাজুয়াল দুই ক্ষেত্রেই মানানসই।</p>
+<div class="product-frame">
+<img src="IMAGE_LINK_HERE_2">
+</div>
+<h3>Classic Dark Style</h3>
+<p>স্টাইলিশ ও আরামদায়ক ডিজাইন।</p>
 <a href="#order" class="order-btn">অর্ডার করতে চাই</a>
 </div>
 
 <div class="product">
-<img src="#" alt="">
-<h3>Black Slim Fit</h3>
-<p>স্মার্ট ও ট্রেন্ডি ডিজাইন যা আপনাকে আলাদা করে তুলবে।</p>
+<div class="product-frame">
+<img src="IMAGE_LINK_HERE_3">
+</div>
+<h3>Modern Slim Fit</h3>
+<p>ট্রেন্ডি ও স্মার্ট লুকের জন্য।</p>
 <a href="#order" class="order-btn">অর্ডার করতে চাই</a>
 </div>
 
 <div class="product">
-<img src="#" alt="">
-<h3>Limited Edition Style</h3>
-<p>সীমিত স্টক – এখনই অর্ডার করুন।</p>
+<div class="product-frame">
+<img src="IMAGE_LINK_HERE_4">
+</div>
+<h3>Limited Edition</h3>
+<p>সীমিত স্টক – এখনই সংগ্রহ করুন।</p>
 <a href="#order" class="order-btn">অর্ডার করতে চাই</a>
 </div>
 
-<!-- Order Form -->
+<!-- ORDER FORM -->
 <div class="order-box" id="order">
-
 <h2 style="text-align:center;">অর্ডার ফর্ম</h2>
 
-<form>
+<form id="orderForm">
 
 <label>নাম <span>*</span></label>
-<input type="text" required>
+<input type="text" id="name" required>
 
 <label>মোবাইল <span>*</span></label>
-<input type="tel" required>
+<input type="tel" id="phone" required>
 
 <label>ঠিকানা <span>*</span></label>
-<input type="text" required>
+<input type="text" id="address" required>
 
-<label>সাইজ নির্বাচন করুন</label>
-<select>
+<label>সাইজ</label>
+<select id="size">
 <option>M</option>
 <option>L</option>
 <option>XL</option>
@@ -268,29 +267,62 @@ allowfullscreen>
 মোট মূল্য: ৳ <span id="total">990</span>
 </div>
 
-<button type="submit">অর্ডার কনফার্ম করুন</button>
+<button type="submit" class="submit-btn">অর্ডার কনফার্ম করুন</button>
 
 </form>
-
 </div>
 
 </div>
 
-<!-- Floating Buttons -->
-<div class="float-buttons">
-<a href="#"><img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg"></a>
-<a href="#" class="messenger"><img src="https://upload.wikimedia.org/wikipedia/commons/0/05/Facebook_Messenger_logo_2020.svg"></a>
+<!-- FOOTER -->
+<div class="footer">
+<p>© 2026 Your Company | All Rights Reserved</p>
+<p>
+<a href="YOUR_WEBSITE_LINK_HERE" target="_blank">
+Design By GreenLine IT
+</a>
+</p>
 </div>
 
 <script>
 let price=990;
 let qty=1;
+
 function changeQty(change){
 qty+=change;
 if(qty<1)qty=1;
 document.getElementById("qty").innerText=qty;
 document.getElementById("total").innerText=price*qty;
 }
+
+/* ================= GOOGLE SHEET SUBMIT ================= */
+/* এখানে আপনার Google Script Web App URL বসান */
+const scriptURL = "PASTE_YOUR_GOOGLE_SCRIPT_WEBAPP_URL_HERE";
+
+document.getElementById("orderForm").addEventListener("submit", function(e){
+e.preventDefault();
+
+const data = {
+name: document.getElementById("name").value,
+phone: document.getElementById("phone").value,
+address: document.getElementById("address").value,
+size: document.getElementById("size").value,
+quantity: qty,
+total: price*qty
+};
+
+fetch(scriptURL, {
+method: "POST",
+body: JSON.stringify(data)
+})
+.then(res => {
+alert("অর্ডার সফল হয়েছে ✅");
+document.getElementById("orderForm").reset();
+})
+.catch(err => {
+alert("সাবমিট সমস্যা হয়েছে ❌");
+});
+});
 </script>
 
 </body>
