@@ -3,14 +3,17 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Premium Jens Pant – Limited Offer</title>
+<title>Premium Jens Pant</title>
+
+<!-- ================= FB PIXEL SETUP PLACE ================= -->
+<!-- আপনার Facebook Pixel Code এখানে বসাবেন -->
+<!-- ======================================================= -->
 
 <style>
 body{
 margin:0;
-font-family: 'Segoe UI', sans-serif;
+font-family:'Segoe UI',sans-serif;
 background:#f4f6f9;
-color:#222;
 }
 
 .wrapper{
@@ -19,108 +22,100 @@ margin:auto;
 background:#fff;
 }
 
-/* HERO */
-.hero{
-background:linear-gradient(135deg,#1b262c,#3282b8);
-color:white;
+/* Company Header */
+.company-header{
 text-align:center;
-padding:40px 20px;
-position:relative;
+padding:25px 15px;
 }
 
-.discount-badge{
-position:absolute;
-top:15px;
-right:15px;
-background:#ff3b3b;
-padding:8px 15px;
-border-radius:50px;
-font-weight:bold;
-animation:pulse 1.5s infinite;
-}
-
-@keyframes pulse{
-0%{transform:scale(1);}
-50%{transform:scale(1.1);}
-100%{transform:scale(1);}
-}
-
-.hero img{
-width:100%;
-max-height:350px;
+.company-header img{
+width:100px;
+height:100px;
+border-radius:50%;
 object-fit:cover;
-border-radius:15px;
-margin-top:20px;
-box-shadow:0 15px 40px rgba(0,0,0,.4);
+box-shadow:0 10px 25px rgba(0,0,0,.3);
 }
 
-.hero h1{margin:15px 0 5px;font-size:30px;}
-.hero p{font-size:16px;}
-
-.stock{
-color:#ffdd57;
-font-weight:bold;
-margin-top:10px;
-}
-
-/* PRICE */
-.price-box{
-text-align:center;
-padding:25px;
-}
-.old-price{
-text-decoration:line-through;
-color:gray;
-}
-.new-price{
-font-size:32px;
-color:#e63946;
+.company-header h2{
+margin:10px 0 0;
+font-size:22px;
+color:#1b262c;
 font-weight:bold;
 }
 
-/* TRUST */
-.trust{
-display:flex;
-flex-wrap:wrap;
-justify-content:center;
-gap:15px;
+/* YouTube Section */
+.video-section{
 padding:20px;
 text-align:center;
 }
-.trust div{
-background:#f1f1f1;
-padding:10px 15px;
-border-radius:8px;
-font-size:14px;
-}
 
-/* SECTION */
-.section{
-padding:20px;
-}
-
-.section img{
+.video-section iframe{
 width:100%;
+height:315px;
 border-radius:15px;
-box-shadow:0 10px 30px rgba(0,0,0,.25);
-margin-bottom:15px;
+box-shadow:0 15px 35px rgba(0,0,0,.3);
+}
+
+/* Product Section */
+.product{
+padding:25px 20px;
+text-align:center;
+}
+
+.product img{
+width:100%;
+border-radius:20px;
+box-shadow:0 15px 40px rgba(0,0,0,.35);
+border:5px solid #fff;
 transition:.4s;
 }
-.section img:hover{
+
+.product img:hover{
 transform:scale(1.03);
 }
 
-/* ORDER */
+.product h3{
+margin:15px 0 8px;
+font-size:20px;
+color:#1b262c;
+}
+
+.product p{
+font-size:14px;
+color:#444;
+}
+
+/* Moving Button */
+.order-btn{
+display:inline-block;
+margin-top:15px;
+padding:14px 28px;
+background:#e63946;
+color:white;
+border-radius:50px;
+font-weight:bold;
+text-decoration:none;
+animation:float 1.5s infinite;
+box-shadow:0 8px 20px rgba(0,0,0,.3);
+}
+
+@keyframes float{
+0%{transform:translateY(0);}
+50%{transform:translateY(-6px);}
+100%{transform:translateY(0);}
+}
+
+/* Order Box */
 .order-box{
 background:#e0f7fa;
 padding:20px;
-border-radius:12px;
 margin:20px;
+border-radius:15px;
 }
 
 input,select{
 width:100%;
-padding:14px;
+padding:12px;
 margin:8px 0;
 border-radius:8px;
 border:1px solid #ccc;
@@ -144,52 +139,31 @@ font-size:22px;
 
 .total{
 text-align:center;
-font-size:20px;
 font-weight:bold;
-margin-top:10px;
+font-size:18px;
 }
 
 button{
-display:block;
 width:100%;
-padding:16px;
+padding:15px;
 background:#1b262c;
 color:white;
 border:none;
 border-radius:10px;
-font-size:18px;
+font-size:16px;
 margin-top:15px;
-cursor:pointer;
 }
 
-button:hover{
-background:#3282b8;
-}
-
-/* Sticky Button */
-.sticky-order{
-position:fixed;
-bottom:0;
-left:0;
-right:0;
-background:#e63946;
-color:white;
-text-align:center;
-padding:15px;
-font-weight:bold;
-cursor:pointer;
-z-index:1000;
-}
-
-/* Floating */
+/* Floating Buttons */
 .float-buttons{
 position:fixed;
-bottom:70px;
+bottom:20px;
 right:20px;
 display:flex;
 flex-direction:column;
 gap:10px;
 }
+
 .float-buttons a{
 width:45px;
 height:45px;
@@ -199,9 +173,11 @@ align-items:center;
 justify-content:center;
 background:#25d366;
 }
+
 .float-buttons a.messenger{
 background:#0084ff;
 }
+
 .float-buttons img{
 width:22px;
 }
@@ -212,39 +188,56 @@ width:22px;
 
 <div class="wrapper">
 
-<div class="hero">
-<div class="discount-badge">40% OFF</div>
-<h1>Premium Jens Pant</h1>
-<p>Limited Time Offer – Cash On Delivery Available</p>
-<div class="stock">⚠️ সীমিত স্টক বাকি আছে</div>
-<img src="#" alt="Main Product">
+<!-- Company Logo & Name -->
+<div class="company-header">
+<img src="#" alt="Company Logo">
+<h2>Your Company</h2>
 </div>
 
-<div class="price-box">
-<p class="old-price">আগের মূল্য ৳1200</p>
-<p class="new-price">এখন মাত্র ৳990</p>
+<!-- YouTube Video First -->
+<div class="video-section">
+<iframe src="https://www.youtube.com/embed/YOUR_VIDEO_ID"
+frameborder="0"
+allowfullscreen>
+</iframe>
 </div>
 
-<div class="trust">
-<div>🚚 3-5 দিন ডেলিভারি</div>
-<div>💵 Cash On Delivery</div>
-<div>🔄 সহজ রিটার্ন</div>
-<div>📞 24/7 সাপোর্ট</div>
-</div>
+<!-- 4 Product Sections -->
 
-<div class="section">
+<div class="product">
 <img src="#" alt="">
-<img src="#" alt="">
-<img src="#" alt="">
+<h3>Classic Blue Edition</h3>
+<p>ডেইলি ইউজের জন্য প্রিমিয়াম ফ্যাব্রিক ও স্টাইলিশ লুক।</p>
+<a href="#order" class="order-btn">অর্ডার করতে চাই</a>
 </div>
 
+<div class="product">
+<img src="#" alt="">
+<h3>Dark Grey Premium</h3>
+<p>অফিস ও ক্যাজুয়াল দুই ক্ষেত্রেই মানানসই।</p>
+<a href="#order" class="order-btn">অর্ডার করতে চাই</a>
+</div>
+
+<div class="product">
+<img src="#" alt="">
+<h3>Black Slim Fit</h3>
+<p>স্মার্ট ও ট্রেন্ডি ডিজাইন যা আপনাকে আলাদা করে তুলবে।</p>
+<a href="#order" class="order-btn">অর্ডার করতে চাই</a>
+</div>
+
+<div class="product">
+<img src="#" alt="">
+<h3>Limited Edition Style</h3>
+<p>সীমিত স্টক – এখনই অর্ডার করুন।</p>
+<a href="#order" class="order-btn">অর্ডার করতে চাই</a>
+</div>
+
+<!-- Order Form -->
 <div class="order-box" id="order">
 
 <h2 style="text-align:center;">অর্ডার ফর্ম</h2>
 
-<img src="#" style="max-width:200px;margin:auto;display:block;border-radius:12px;box-shadow:0 10px 20px rgba(0,0,0,.2);">
-
-<form id="orderForm">
+<form>
 
 <label>নাম <span>*</span></label>
 <input type="text" required>
@@ -255,13 +248,15 @@ width:22px;
 <label>ঠিকানা <span>*</span></label>
 <input type="text" required>
 
-<label>সাইজ</label>
+<label>সাইজ নির্বাচন করুন</label>
 <select>
 <option>M</option>
 <option>L</option>
 <option>XL</option>
 <option>XXL</option>
 </select>
+
+<h4 style="text-align:center;">কয়টি অর্ডার করতে চান?</h4>
 
 <div class="quantity-box">
 <button type="button" onclick="changeQty(-1)">-</button>
@@ -270,7 +265,7 @@ width:22px;
 </div>
 
 <div class="total">
-মোট: ৳ <span id="total">990</span>
+মোট মূল্য: ৳ <span id="total">990</span>
 </div>
 
 <button type="submit">অর্ডার কনফার্ম করুন</button>
@@ -281,10 +276,7 @@ width:22px;
 
 </div>
 
-<div class="sticky-order" onclick="document.getElementById('order').scrollIntoView();">
-👉 এখনই অর্ডার করুন
-</div>
-
+<!-- Floating Buttons -->
 <div class="float-buttons">
 <a href="#"><img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg"></a>
 <a href="#" class="messenger"><img src="https://upload.wikimedia.org/wikipedia/commons/0/05/Facebook_Messenger_logo_2020.svg"></a>
