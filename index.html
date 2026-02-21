@@ -26,6 +26,7 @@ max-width:1000px;
 margin:auto;
 background:#fff;
 padding-bottom:50px;
+position:relative;
 }
 
 /* Logo Section */
@@ -116,8 +117,14 @@ padding:25px;
 border-radius:15px;
 }
 
+.input-row{
+display:flex;
+flex-wrap:wrap;
+gap:10px;
+}
+
 input,select{
-width:100%;
+flex:1;
 padding:12px;
 margin:8px 0;
 border-radius:8px;
@@ -126,12 +133,19 @@ border:1px solid #ccc;
 
 label span{color:red;}
 
+/* Quantity + Mini Product Image */
+.quantity-container{
+display:flex;
+align-items:center;
+justify-content:center;
+gap:20px;
+margin:15px 0;
+}
+
 .quantity-box{
 display:flex;
-justify-content:center;
 align-items:center;
-gap:15px;
-margin:15px 0;
+gap:10px;
 }
 
 .quantity-box button{
@@ -144,12 +158,21 @@ border:none;
 border-radius:8px;
 }
 
+.quantity-container img{
+width:100px;
+border-radius:15px;
+box-shadow:0 5px 15px rgba(0,0,0,.2);
+}
+
+/* Total Price */
 .total{
 text-align:center;
 font-weight:bold;
 font-size:18px;
+margin-top:10px;
 }
 
+/* Submit */
 .submit-btn{
 width:100%;
 padding:15px;
@@ -159,6 +182,31 @@ border:none;
 border-radius:10px;
 font-size:16px;
 margin-top:15px;
+cursor:pointer;
+}
+
+/* Floating Success Message */
+.success-overlay{
+position:fixed;
+top:20px;
+left:50%;
+transform:translateX(-50%);
+background:#d4edda;
+color:#155724;
+padding:20px 30px;
+border-radius:12px;
+box-shadow:0 10px 25px rgba(0,0,0,.3);
+font-size:16px;
+text-align:center;
+display:none;
+z-index:9999;
+animation:fadeInOut 4s forwards;
+}
+
+@keyframes fadeInOut{
+0%{opacity:0;transform:translateX(-50%) translateY(-20px);}
+10%,80%{opacity:1;transform:translateX(-50%) translateY(0);}
+100%{opacity:0;transform:translateX(-50%) translateY(-20px);}
 }
 
 /* Footer */
@@ -237,6 +285,7 @@ frameborder="0" allow="autoplay" allowfullscreen></iframe>
 
 <form id="orderForm">
 
+<div class="input-row">
 <label>নাম <span>*</span></label>
 <input type="text" id="name" required>
 
@@ -253,13 +302,17 @@ frameborder="0" allow="autoplay" allowfullscreen></iframe>
 <option>XL</option>
 <option>XXL</option>
 </select>
+</div>
 
 <h4 style="text-align:center;">কয়টি অর্ডার করতে চান?</h4>
 
+<div class="quantity-container">
 <div class="quantity-box">
 <button type="button" onclick="changeQty(-1)">-</button>
 <span id="qty">1</span>
 <button type="button" onclick="changeQty(1)">+</button>
+</div>
+<img id="miniImg" src="IMAGE_LINK_HERE_1" alt="Mini Product">
 </div>
 
 <div class="total">
@@ -270,10 +323,12 @@ frameborder="0" allow="autoplay" allowfullscreen></iframe>
 
 </form>
 
-<div id="successMsg" style="display:none; margin-top:15px; padding:15px; background:#d4edda; color:#155724; border-radius:5px; font-size:16px; text-align:center;">
-✅ ধন্যবাদ আপনার অর্ডারটি সাবমিট হয়েছে ✅ আমাদের সাপোর্ট প্রতিনিধি আপনার সাথে কিছুক্ষণ পর যোগাযোগ করবে ✅
 </div>
 
+<!-- SUCCESS MESSAGE -->
+<div class="success-overlay" id="successMsg">
+✅ ধন্যবাদ আপনার অর্ডারটি সাবমিট হয়েছে ✅<br>
+✅ আমাদের সাপোর্ট প্রতিনিধি আপনার সাথে কিছুক্ষণ পর যোগাযোগ করবে ✅
 </div>
 
 <!-- FOOTER -->
@@ -322,6 +377,7 @@ document.getElementById("orderForm").reset();
 qty=1;
 document.getElementById("qty").innerText=qty;
 document.getElementById("total").innerText=price;
+setTimeout(()=>{document.getElementById("successMsg").style.display="none";},4000);
 })
 .catch(err=>{
 alert("সাবমিট করতে সমস্যা হয়েছে।");
