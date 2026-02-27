@@ -6,6 +6,8 @@
 <title>Methi Mixd Powder</title>
 
 <style>
+*{box-sizing:border-box;}
+
 body{
 margin:0;
 background:#ffffff;
@@ -14,27 +16,45 @@ text-align:center;
 overflow-x:hidden;
 }
 
-/* 🔥 UPDATED IMAGE SECTION */
-.product-gallery{
+/* 🔥 SLIDER SECTION */
+.slider{
+width:100%;
+overflow:hidden;
+position:relative;
+}
+
+.slides{
 display:flex;
-justify-content:center;
-gap:15px;
-flex-wrap:wrap;
-margin-top:20px;
+width:400%;
+animation:slide 8s infinite;
 }
 
-.product-gallery img{
-width:180px;
+.slides img{
+width:100vw;
 height:auto;
-padding:6px;
-background:white;
-border:4px solid red;
-outline:4px solid yellow;
-box-shadow:0 0 0 8px green;
+flex-shrink:0;
 }
 
-/* 🔥 END UPDATED IMAGE SECTION */
+/* আলাদা আউটলাইন */
+.slide1{border:4px solid red;}
+.slide2{border:4px solid green;}
+.slide3{border:4px solid blue;}
+.slide4{border:4px solid orange;}
 
+@keyframes slide{
+0%{transform:translateX(0%);}
+20%{transform:translateX(0%);}
+25%{transform:translateX(-100%);}
+45%{transform:translateX(-100%);}
+50%{transform:translateX(-200%);}
+70%{transform:translateX(-200%);}
+75%{transform:translateX(-300%);}
+95%{transform:translateX(-300%);}
+100%{transform:translateX(0%);}
+}
+/* 🔥 END SLIDER */
+
+/* ভিডিও আগের মতো */
 .video-wrapper{
 width:100%;
 border:2px solid red;
@@ -47,6 +67,7 @@ overflow:hidden;
 .video-wrapper iframe{
 position:absolute;top:0;left:0;width:100%;height:100%;border:none;
 }
+
 .price{font-size:22px;font-weight:bold;margin:10px 0;}
 .benefit-title{
 display:inline-block;background:yellow;padding:8px 15px;
@@ -107,17 +128,18 @@ text-align:center;
 
 <body>
 
-<!-- 🔥 UPDATED 4 IMAGE SECTION -->
-<div class="product-gallery">
-<img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjwjoi8RBP65poQRwkTz9IVyQSjAZ5gCvTXYycafCryfXIJ06e2qebmmcGwbn005CyuiliwExeZ08GRKv2BxmDnS1UQzCDNi8aT7Pq1-fmxGZVECjmewLuWjqLcno6MY8W-9GPrsjDzxNw-YVdoHZw0j2gKGINDlvhTLOLLnRewxtnOLnS53Yl3oym2KrM/s1599/WhatsApp%20Image%202026-02-26%20at%2002.38.05.jpeg">
-<img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjwjoi8RBP65poQRwkTz9IVyQSjAZ5gCvTXYycafCryfXIJ06e2qebmmcGwbn005CyuiliwExeZ08GRKv2BxmDnS1UQzCDNi8aT7Pq1-fmxGZVECjmewLuWjqLcno6MY8W-9GPrsjDzxNw-YVdoHZw0j2gKGINDlvhTLOLLnRewxtnOLnS53Yl3oym2KrM/s1599/WhatsApp%20Image%202026-02-26%20at%2002.38.05.jpeg">
-<img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjwjoi8RBP65poQRwkTz9IVyQSjAZ5gCvTXYycafCryfXIJ06e2qebmmcGwbn005CyuiliwExeZ08GRKv2BxmDnS1UQzCDNi8aT7Pq1-fmxGZVECjmewLuWjqLcno6MY8W-9GPrsjDzxNw-YVdoHZw0j2gKGINDlvhTLOLLnRewxtnOLnS53Yl3oym2KrM/s1599/WhatsApp%20Image%202026-02-26%20at%2002.38.05.jpeg">
-<img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjwjoi8RBP65poQRwkTz9IVyQSjAZ5gCvTXYycafCryfXIJ06e2qebmmcGwbn005CyuiliwExeZ08GRKv2BxmDnS1UQzCDNi8aT7Pq1-fmxGZVECjmewLuWjqLcno6MY8W-9GPrsjDzxNw-YVdoHZw0j2gKGINDlvhTLOLLnRewxtnOLnS53Yl3oym2KrM/s1599/WhatsApp%20Image%202026-02-26%20at%2002.38.05.jpeg">
+<!-- 🔥 AUTO SLIDER -->
+<div class="slider">
+<div class="slides">
+<img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEi6M7FAEIooih4SWEPCi_qK0uN-Vbfy9DhPe4OhA5xVksokVUlBrqoJsv1twLs7ftaF02BZOcCA1kCwCKdUYrzoaKp4gWb0AW6Oa8mPfKdXYuFOPmuM4MocpcKQyD1lI6y3mCv2BQaKJfpPkUbqp3yXT1OAu21VqTjZKNiq4T3S3Yz4U6QAPJ86ILeTkGU/s511/WhatsApp_Image_2026-02-26_at_17.06.09-removebg-preview%20(2).png" class="slide1">
+<img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEi6M7FAEIooih4SWEPCi_qK0uN-Vbfy9DhPe4OhA5xVksokVUlBrqoJsv1twLs7ftaF02BZOcCA1kCwCKdUYrzoaKp4gWb0AW6Oa8mPfKdXYuFOPmuM4MocpcKQyD1lI6y3mCv2BQaKJfpPkUbqp3yXT1OAu21VqTjZKNiq4T3S3Yz4U6QAPJ86ILeTkGU/s511/WhatsApp_Image_2026-02-26_at_17.06.09-removebg-preview%20(2).png" class="slide2">
+<img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEi6M7FAEIooih4SWEPCi_qK0uN-Vbfy9DhPe4OhA5xVksokVUlBrqoJsv1twLs7ftaF02BZOcCA1kCwCKdUYrzoaKp4gWb0AW6Oa8mPfKdXYuFOPmuM4MocpcKQyD1lI6y3mCv2BQaKJfpPkUbqp3yXT1OAu21VqTjZKNiq4T3S3Yz4U6QAPJ86ILeTkGU/s511/WhatsApp_Image_2026-02-26_at_17.06.09-removebg-preview%20(2).png" class="slide3">
+<img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEi6M7FAEIooih4SWEPCi_qK0uN-Vbfy9DhPe4OhA5xVksokVUlBrqoJsv1twLs7ftaF02BZOcCA1kCwCKdUYrzoaKp4gWb0AW6Oa8mPfKdXYuFOPmuM4MocpcKQyD1lI6y3mCv2BQaKJfpPkUbqp3yXT1OAu21VqTjZKNiq4T3S3Yz4U6QAPJ86ILeTkGU/s511/WhatsApp_Image_2026-02-26_at_17.06.09-removebg-preview%20(2).png" class="slide4">
 </div>
-<!-- 🔥 END UPDATED SECTION -->
+</div>
 
 <div class="video-wrapper">
-<iframe src="https://www.youtube.com/embed/YOUR_YOUTUBE_VIDEO_ID" allowfullscreen></iframe>
+<iframe src="https://www.youtube.com/embed/pJrfhCo_dgw" allowfullscreen></iframe>
 </div>
 
 <div class="price">MRP-900tk</div>
@@ -139,7 +161,8 @@ Methi Mixd powder সেবনের উপকারিতা 👇
 <li>৭ দিন সেবনে শারীরিক শক্তি এবং যৌন শক্তি বৃদ্ধি</li>
 </ul>
 
-<!-- 🔥 বাকি পুরো কোড অপরিবর্তিত রাখা হয়েছে -->
+<!-- 🔥 আপনার বাকি স্ক্র্যাচ কার্ড + বিলিং + JS কোড একদম আগের মতো এখান থেকে থাকবে -->
+
 
 <h3>স্ক্র্যাচ কার্ড ঘষে সর্বোচ্চ ডিসকাউন্ট নিন ⬇️</h3>
 
@@ -577,6 +600,7 @@ Design by 01785369906
 </footer>
 </body>
 </html>
+
 
 
 
